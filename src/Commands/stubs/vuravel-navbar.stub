@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Menus;
+
+use Vuravel\Components\Menu;
+use Vuravel\Components\{Logo, NavSearch, CollapseOnMobile, Link};
+
+class {name}  extends Menu
+{
+	public function components()
+	{
+		return [
+			Logo::form('<b>'.config('app.name').'</b>'),
+			NavSearch::form(''),
+			CollapseOnMobile::form('')
+				->rightMenu([
+					Link::form('Vuravel')->target('_blank')->href('https://vuravel.com/docs'),
+					Link::form('Laravel')->target('_blank')->href('https://laravel.com/docs'),
+					Link::form('Vue.js')->target('_blank')->href('https://vuejs.org/v2/guide')
+				])
+		];
+	}
+}

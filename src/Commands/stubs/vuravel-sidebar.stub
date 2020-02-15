@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Menus;
+
+use Vuravel\Components\Menu;
+use Vuravel\Components\{Collapse, Link};
+
+class {name} extends Menu
+{
+	public $placement = 'fixed';
+	public $class = '';
+
+	public function components()
+	{	
+		return [
+			Collapse::form('Block 1')->submenu([
+				Link::form('Vuravel')->target('_blank')->href('https://vuravel.com/docs')
+			]),
+			Collapse::form('Block 2')->submenu([
+				Link::form('Laravel')->target('_blank')->href('https://laravel.com/docs'),
+				Link::form('Vue.js')->target('_blank')->href('https://vuejs.org/v2/guide')
+			])->expandByDefault()
+		];
+	}
+
+}
