@@ -197,7 +197,7 @@
     	if(target.hasClass('vl-menu-closed')){
     		$(toggler).removeClass('vl-toggler-closed').attr("aria-expanded","true")
     		target.slideDown().css('display','flex').removeClass('vl-menu-closed')
-    			.css('max-height', 'calc(100vh - '+height(vlNav)+'px)')
+    			//.css('max-height', 'calc(100vh - '+height(vlNav)+'px)') //why did I add it? To delete
     	}else{
     		$(toggler).addClass('vl-toggler-closed').attr("aria-expanded","false")
     		target.slideUp().css('display','none').addClass('vl-menu-closed')

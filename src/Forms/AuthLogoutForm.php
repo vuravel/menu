@@ -1,19 +1,25 @@
 <?php
 namespace Vuravel\Menu\Forms;
 
-use Vuravel\Form\Form;
-use Vuravel\Form\Components\Link;
+use Vuravel\Components\Link;
 
-class AuthLogoutForm extends Form
+class AuthLogoutForm extends \VlForm
 {
-	protected $submitTo = 'logout';
+    protected $redirectTo = '/';
 
-	protected $redirectTo = '/';
+	public function handle($request)
+    {
+        \Auth::guard()->logout();
+        $locale = session('locale'); //for multi-lang sites
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        session( ['locale' => $locale] ); //for multi-lang sites
+    }
 
 	public function components()
 	{
 		return [
-			Link::form(__('Logout'))->submitsForm()
+			Link::form('Logout')->submitsForm()
 		];
 	}
 
