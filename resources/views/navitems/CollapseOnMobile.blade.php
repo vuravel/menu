@@ -1,5 +1,5 @@
 <div class="vl-navbar-toggler vl-nav-item"
-    onclick="toggleMenu(this)"
+    onclick="toggleMenu(this, true)"
  	aria-label="Open menu"
  	aria-expanded="false">
  	{!! $component->label ? : '&#9776;' !!}
