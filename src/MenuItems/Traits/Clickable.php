@@ -66,7 +66,7 @@ trait Clickable {
         if($this->activeTurbo)
             $this->checkTurbo($route, $parameters);
 
-        if (filter_var($route, FILTER_VALIDATE_URL) !== false) {
+        if (filter_var($route, FILTER_VALIDATE_URL) !== false || $route === 'javascript:void(0)') {
             $this->href = $route;
         } else {
             $this->setRoute($route, $parameters);

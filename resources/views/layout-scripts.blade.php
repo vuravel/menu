@@ -198,7 +198,7 @@
     		
     		if(fixHeight){
     			target.css('max-height', 'calc(100vh - '+height(vlNav)+'px)')
-    			$('body').css('overflow', 'hidden')
+    			$('body').css('overflow', 'hidden') //no double scrolling, better navigation
     		}
 
     		$(toggler).removeClass('vl-toggler-closed').attr("aria-expanded","true")
