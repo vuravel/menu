@@ -26,6 +26,8 @@
     	vlWrapper = $('#vl-wrapper')
 
 
+    vlSetMobile()
+
 	$(document).ready(function(){
 
 		vlOnLoadScrollResize()
@@ -34,9 +36,14 @@
       	
     })
 
-    function vlOnLoadScrollResize()
+    function vlSetMobile()
     {
     	window.vlMobile = vlMobileIndicator.css('display') === 'block'
+    }
+
+    function vlOnLoadScrollResize()
+    {
+    	vlSetMobile()
     	@if($HasAnySidebar)
 	    	copySidebarsToNav()
 	    	fixSidebars()
