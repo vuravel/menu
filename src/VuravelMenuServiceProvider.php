@@ -16,9 +16,6 @@ class VuravelMenuServiceProvider extends ServiceProvider
     {
         if(config('vuravel.menus.from_database'))
             $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'vuravel-menu');
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
         if (file_exists($file = __DIR__.'/helpers.php'))
             require_once $file;
